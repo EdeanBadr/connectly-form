@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Send your contact details to Connectly." />
+    <title>Connectly — Stay connected</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <h1 class="brand" id="page-title">connectly</h1>
+        <p class="tagline">Connect with friends and share moments with the people in your life.</p>
+      </section>
+
+      <section class="form-area" aria-label="Contact Connectly">
+        <form
+          class="contact-card"
+          id="contact-form"
+          action="https://formspree.io/f/moevqzeg"
+          method="POST"
+          novalidate
+        >
+          <input
+            class="honeypot"
+            name="_gotcha"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+          <input name="subject" type="hidden" value="New Connectly contact submission" />
+
+          <label class="sr-only" for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="Email address"
+            aria-describedby="form-message submission-note"
+          />
+
+          <label class="sr-only" for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            placeholder="Username"
+            minlength="3"
+            maxlength="80"
+            aria-describedby="form-message submission-note"
+          />
+
+          <button class="submit-button" id="submit-button" type="submit" disabled>
+            Continue
+          </button>
+          <p class="form-message" id="form-message" aria-live="polite"></p>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <p class="submission-note" id="submission-note">
+            Continuing sends your email and username to the site owner through Formspree. No
+            password is requested or collected.
+          </p>
+        </form>
+
+        <p class="privacy-copy">Your details are used only to respond to your submission.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <nav class="language-links" aria-label="Languages">
+          <span>English (UK)</span>
+          <span>Français (France)</span>
+          <span>العربية</span>
+          <span>Español</span>
+          <span>Deutsch</span>
+          <span>Italiano</span>
+          <span>Português (Brasil)</span>
+          <span>हिन्दी</span>
+        </nav>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <nav class="utility-links" aria-label="Site links">
+          <span>About</span>
+          <span>Privacy</span>
+          <span>Terms</span>
+          <span>Help</span>
+        </nav>
+        <p class="copyright">Connectly © 2026</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
