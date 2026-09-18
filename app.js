@@ -1,6 +1,6 @@
-const form = document.querySelector("#contact-form");
-const emailInput = document.querySelector("#email");
-const usernameInput = document.querySelector("#username");
+const form = document.querySelector("#name-form");
+const nicknameInput = document.querySelector("#nickname");
+const reactionInput = document.querySelector("#reaction");
 const submitButton = document.querySelector("#submit-button");
 const message = document.querySelector("#form-message");
 
@@ -10,41 +10,30 @@ function setMessage(text, type = "error") {
   message.classList.toggle("is-success", type === "success");
 }
 
-function formIsReady() {
-  return emailInput.validity.valid && usernameInput.value.trim().length >= 3;
-}
-
-function updateSubmitButton() {
-  submitButton.disabled = !formIsReady();
-}
-
-[emailInput, usernameInput].forEach((input) => {
+[nicknameInput, reactionInput].forEach((input) => {
   input.addEventListener("input", () => {
     input.removeAttribute("aria-invalid");
     setMessage("");
-    updateSubmitButton();
   });
 });
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const emailIsInvalid = !emailInput.validity.valid;
-  const usernameIsInvalid = usernameInput.value.trim().length < 3;
+  const nicknameIsEmpty = nicknameInput.value.trim() === "";
+  const reactionIsEmpty = reactionInput.value.trim() === "";
 
-  emailInput.toggleAttribute("aria-invalid", emailIsInvalid);
-  usernameInput.toggleAttribute("aria-invalid", usernameIsInvalid);
+  nicknameInput.toggleAttribute("aria-invalid", nicknameIsEmpty);
+  reactionInput.toggleAttribute("aria-invalid", reactionIsEmpty);
 
-  if (emailIsInvalid || usernameIsInvalid) {
-    setMessage(
-      emailIsInvalid ? "Enter a valid email address." : "Enter a username with at least 3 characters.",
-    );
-    (emailIsInvalid ? emailInput : usernameInput).focus();
+  if (nicknameIsEmpty || reactionIsEmpty) {
+    setMessage(nicknameIsEmpty ? "Enter a nickname." : "Enter your reaction.");
+    (nicknameIsEmpty ? nicknameInput : reactionInput).focus();
     return;
   }
 
   submitButton.disabled = true;
-  submitButton.textContent = "Sending…";
+  submitButton.textContent = "Sending...";
   setMessage("");
 
   try {
@@ -55,15 +44,15 @@ form.addEventListener("submit", async (event) => {
     });
 
     if (!response.ok) {
-      throw new Error("Formspree could not accept the submission.");
+      throw new Error("could not accept the response.");
     }
 
     form.reset();
-    setMessage("Thanks — your email and username were sent successfully.", "success");
+    setMessage("Success", "success");
   } catch {
-    setMessage("Your details could not be sent. Please try again in a moment.");
+    setMessage("Please try again.");
   } finally {
-    submitButton.textContent = "Continue";
-    updateSubmitButton();
+    submitButton.disabled = false;
+    submitButton.textContent = "Sucess";
   }
 });
